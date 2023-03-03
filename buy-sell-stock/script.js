@@ -5,18 +5,38 @@
 // Find and return the maximum profit you can achieve.
 
 // 2 things need to be done - buy and sell - two for loops
-// price: [7,1,5,3,6,4]
+// price:[7,1,5,3,6,4]
 // days: [1,2,3,4,5,6]
 // index:[0,1,2,3,4,5]
+
+// buyDay = 1
+// buyPrice = prices[buyDay] = 1
+
+
+// sellDay = 4
+// sellPrice = prices[sellDay] = 6
+
+//profit = sellPrice-buyPrice = 6-1 = 5
 
 
 /**
  * @param {number[]} prices
  * @return {number}
  */
+
+var maxSingleProfit = function (prices){
+    
+}
 var maxProfit = function(prices) {
+    let minBuyPrice = prices [0] // we need to find what the min buy price is so we can sell on a higher price
     let maxProfit = 0
-    for(i = 0; i < prices.length, i++)
+    for(i = 1; i < prices.length; i++){ //cant sell before buying so i needs to start at 1
+        const sellPrice = prices[i]
+        const profit = sellPrice-minBuyPrice
+        maxProfit = Math.max(maxProfit, profit)
+        minBuyPrice = Math.min(minBuyPrice, prices[i])
+    }
+    return max
 };
 
 
