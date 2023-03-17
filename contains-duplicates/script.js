@@ -33,10 +33,26 @@ Step 5: If not the same; then return false
  */
 var containsDuplicate = function(nums) {
     nums = nums.sort() // this will sort the array in order from least to greatest 
+   //  console.log('nums', nums);
     for (i = 0; i < nums.length; i++){ 
      if (nums[i] == nums [i +1]){// checking to see if it is the same as the next value in the index
         return true // if the current number is the same as its next value, then return true
      }
      } 
      return false // otherwise return false
+};
+
+console.log(containsDuplicate([1,2,3,1]))
+
+
+// Another way to do it
+var containsDuplicatesSet = function (nums){
+   const set = new Set ():
+   for (let i = 0; i < nums.length; i++) {
+      if (set.has(nums[i])) {
+         return true;
+      }
+      set.add(nums[i]);
+   }
+   return false;
 };
