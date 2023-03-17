@@ -56,3 +56,15 @@ var containsDuplicatesSet = function (nums){
    }
    return false;
 };
+
+var constainsDuplicatesCopiedArray = function (nums) {
+   const copyArray = [];
+   for (let i = 0, i < nums.length; i++) {
+      if (copyArray.includes(nums[i])) {
+         return true;
+      }
+      copyArray.push(nums[i]) {
+      }
+      return false;
+   }
+}
